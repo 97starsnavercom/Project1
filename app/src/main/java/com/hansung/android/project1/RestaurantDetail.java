@@ -26,10 +26,10 @@ public class RestaurantDetail extends AppCompatActivity {
 
 
         //어댑터 생성
-        adapter = new MyAdapter(this, R.layout.activity_restaurant_detail, data);
+        adapter = new MyAdapter(this, R.layout.item, data);
 
         //어댑터 연결
-        ListView listView = (ListView)findViewById(R.id.listView);
+        ListView listView = (ListView)findViewById(R.id.listview);
         listView.setAdapter(adapter);
 
 
