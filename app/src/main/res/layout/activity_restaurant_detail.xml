@@ -127,19 +127,20 @@
                 android:adjustViewBounds="true"
                 android:maxHeight="70dp"
                 android:maxWidth="70dp"
-                android:src="@drawable/sample_02" />
+                android:src="@drawable/sample_02"
+                android:id="@+id/iconItem"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:text="" />
+                android:id="@+id/textItem1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="hansung" />
+                android:id="@+id/textItem2" />
 
 
         </LinearLayout>
