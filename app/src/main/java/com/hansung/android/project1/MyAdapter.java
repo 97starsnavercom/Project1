@@ -70,10 +70,12 @@ class MyItem {
     int mIcon; // image resource
     String nName; // text
     String nPrice;  // text
+    String nScore;
 
-    MyItem(int aIcon, String aName, String aPrice) {
+    MyItem(int aIcon, String aName, String aPrice,String aScore) {
         mIcon = aIcon;
         nName = aName;
         nPrice = aPrice;
+        nScore=aScore;
     }
 }

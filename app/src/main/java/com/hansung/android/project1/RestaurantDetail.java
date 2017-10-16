@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,18 +17,20 @@ import java.util.ArrayList;
 public class RestaurantDetail extends AppCompatActivity {
     static MyAdapter adapter;
     private static final String TAG = "ActivityLifeCycle";
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurant_detail);
 
+
         // 데이터 원본 준비
         ArrayList<MyItem> data = new ArrayList<MyItem>();
-        data.add(new MyItem(R.drawable.katsudo, "가츠동", "5000"));
-        data.add(new MyItem(R.drawable.sakedong, "사케동", "7000"));
-        data.add(new MyItem(R.drawable.shrimp, "새우튀김", "6000"));
-        data.add(new MyItem(R.drawable.sushi, "초밥", "15000"));
+        data.add(new MyItem(R.drawable.katsudo, "가츠동", "5000","평점 3.1"));
+        data.add(new MyItem(R.drawable.sakedong, "사케동", "7000","평점 4.7"));
+        data.add(new MyItem(R.drawable.shrimp, "새우튀김", "6000","평점 2.2"));
+        data.add(new MyItem(R.drawable.sushi, "초밥", "15000","평점 3.4"));
 
 
         //어댑터 생성
@@ -42,16 +46,21 @@ public class RestaurantDetail extends AppCompatActivity {
                                     int position, long id) {
                 //   String name = (String) ((TextView)vClicked.findViewById(R.id.textItem1)).getText();
                 String name = ((MyItem)adapter.getItem(position)).nName;
+
                 int Icon=((MyItem)adapter.getItem(position)).mIcon;
                 String Price=((MyItem)adapter.getItem(position)).nPrice;
+                String Score=((MyItem)adapter.getItem(position)).nScore;
                 Toast.makeText(RestaurantDetail.this, name + " selected",
                         Toast.LENGTH_SHORT).show();
 
 
+
                     Intent intent=new Intent(getApplicationContext(),MenuDetail.class);
                     intent.putExtra("Option1",name);
-                    intent.putExtra("Option2",Icon);
+                    //intent.putExtra("Option2",Icon);
                     intent.putExtra("Option3",Price);
+                intent.putExtra("Option4",Score);
+
 
                     startActivity(intent);
 
@@ -60,6 +69,8 @@ public class RestaurantDetail extends AppCompatActivity {
 
             }
         });
+
+
 
 
     }
