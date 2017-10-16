@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class RestaurantDetail extends AppCompatActivity {
     static MyAdapter adapter;
+    private static final String TAG = "ActivityLifeCycle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,32 @@ public class RestaurantDetail extends AppCompatActivity {
 
         //어댑터 연결
         ListView listView = (ListView)findViewById(R.id.listview);
+
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View vClicked,
+                                    int position, long id) {
+                //   String name = (String) ((TextView)vClicked.findViewById(R.id.textItem1)).getText();
+                String name = ((MyItem)adapter.getItem(position)).nName;
+                int Icon=((MyItem)adapter.getItem(position)).mIcon;
+                String Price=((MyItem)adapter.getItem(position)).nPrice;
+                Toast.makeText(RestaurantDetail.this, name + " selected",
+                        Toast.LENGTH_SHORT).show();
+
+
+                    Intent intent=new Intent(getApplicationContext(),MenuDetail.class);
+                    intent.putExtra("Option1",name);
+                    intent.putExtra("Option2",Icon);
+                    intent.putExtra("Option3",Price);
+
+                    startActivity(intent);
+
+
+
+
+            }
+        });
 
 
     }
@@ -40,4 +69,9 @@ public class RestaurantDetail extends AppCompatActivity {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:02-760-4499")));  //통화실행코드
 
     }
+
+
+
+
+
 }
