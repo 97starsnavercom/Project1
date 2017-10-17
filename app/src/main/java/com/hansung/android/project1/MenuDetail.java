@@ -45,6 +45,7 @@ public class MenuDetail extends AppCompatActivity {
         String msg=intent.getStringExtra("Option1");
         String price=intent.getStringExtra("Option3");
         String score=intent.getStringExtra("Option4");
+        int icon=intent.getIntExtra("Option2",0);
         TextView name = (TextView)findViewById(R.id.text1);
         name.setText(msg);
         TextView name2 = (TextView)findViewById(R.id.text2);
@@ -52,18 +53,9 @@ public class MenuDetail extends AppCompatActivity {
         TextView name3 = (TextView)findViewById(R.id.text3);
         name3.setText(score);
         ImageView imageView=(ImageView)findViewById(R.id.image1) ;
-        if(msg.equals("가츠동")){
-            imageView.setImageResource(R.drawable.katsudo);
-        }
-        else if(msg.equals("사케동")){
-            imageView.setImageResource(R.drawable.sakedong);
-        }
-        else if(msg.equals("새우튀김")){
-            imageView.setImageResource(R.drawable.shrimp);
-        }
-        else if(msg.equals("초밥")){
-            imageView.setImageResource(R.drawable.sushi);
-        }
+        imageView.setImageResource(icon);
+
+
 
 
 

@@ -57,7 +57,7 @@ public class RestaurantDetail extends AppCompatActivity {
 
                     Intent intent=new Intent(getApplicationContext(),MenuDetail.class);
                     intent.putExtra("Option1",name);
-                    //intent.putExtra("Option2",Icon);
+                   intent.putExtra("Option2",Icon);
                     intent.putExtra("Option3",Price);
                 intent.putExtra("Option4",Score);
 
