@@ -16,8 +16,11 @@ import java.util.ArrayList;
 
 public class RestaurantDetail extends AppCompatActivity {
     static MyAdapter adapter;
-    private static final String TAG = "ActivityLifeCycle";
-    TextView text;
+
+    //통화실행코드
+    public void callnumber(View view){
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:02-760-4499")));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +62,6 @@ public class RestaurantDetail extends AppCompatActivity {
 
             }
         });
-    }
-
-    //통화실행코드
-    public void callnumber(View view){
-        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:02-760-4499")));
     }
 
 }
