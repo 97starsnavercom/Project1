@@ -30,7 +30,7 @@
             android:gravity="center"
             android:text="@string/restaurant_name"
 
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/background_light"
             android:textSize="40sp" />
 
 
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/restaurant_address"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/background_light"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -113,14 +113,14 @@
             android:background="@android:color/holo_orange_dark"
             android:gravity="center"
             android:text="NoodlesRoll메뉴"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
         <ListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:textFilterEnabled="true" />
 
 
     </LinearLayout>
