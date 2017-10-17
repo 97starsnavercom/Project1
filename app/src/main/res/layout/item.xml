@@ -18,20 +18,22 @@
             android:adjustViewBounds="true"
             android:maxHeight="70dp"
             android:maxWidth="70dp"
-            android:src="@drawable/sample_02"
             android:id="@+id/iconItem"/>
 
         <TextView
+            android:id="@+id/textItem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:id="@+id/textItem1" />
+            android:textColor="@android:color/black"
+            android:textColorHighlight="@android:color/black" />
 
         <TextView
+            android:id="@+id/textItem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/textItem2" />
+            android:textColor="@android:color/holo_red_light" />
 
 
     </LinearLayout>

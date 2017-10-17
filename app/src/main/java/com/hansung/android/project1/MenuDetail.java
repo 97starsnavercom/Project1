@@ -23,37 +23,38 @@ import static android.support.v4.graphics.drawable.DrawableCompat.setTint;
 
 public class MenuDetail extends AppCompatActivity {
 
-    private static final String TAG = "ActivityLifeCycle";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_menu_detail);
-
         ActionBar actionBar = getSupportActionBar();
+
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
             Drawable drawable = ContextCompat.getDrawable(this,R.drawable.ic_chevron_left_black_24dp);
             if (drawable != null) {
-       setTint(drawable,Color.WHITE);
+                setTint(drawable,Color.WHITE);
                 actionBar.setHomeAsUpIndicator(drawable);
             }
         }
 
         Intent intent =getIntent();
         String msg=intent.getStringExtra("Option1");
+        int icon=intent.getIntExtra("Option2",0);
         String price=intent.getStringExtra("Option3");
         String score=intent.getStringExtra("Option4");
-        int icon=intent.getIntExtra("Option2",0);
+
         TextView name = (TextView)findViewById(R.id.text1);
         name.setText(msg);
+
+        ImageView image=(ImageView)findViewById(R.id.image1) ;
+        image.setImageResource(icon);
+
         TextView name2 = (TextView)findViewById(R.id.text2);
-        name2.setText(price);
+        name2.setText(price+"원");
+
         TextView name3 = (TextView)findViewById(R.id.text3);
-        name3.setText(score);
-        ImageView imageView=(ImageView)findViewById(R.id.image1) ;
-        imageView.setImageResource(icon);
+        name3.setText("평점: "+score);
 
 
 

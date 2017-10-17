@@ -50,6 +50,7 @@ public class MyAdapter extends BaseAdapter {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(mResource, parent,false);
         }
+
         // Set Icon
         ImageView icon = (ImageView) convertView.findViewById(R.id.iconItem);
         icon.setImageResource(mItems.get(position).mIcon);
@@ -70,7 +71,7 @@ class MyItem {
     int mIcon; // image resource
     String nName; // text
     String nPrice;  // text
-    String nScore;
+    String nScore;  //text
 
     MyItem(int aIcon, String aName, String aPrice,String aScore) {
         mIcon = aIcon;
